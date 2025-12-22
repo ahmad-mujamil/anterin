@@ -38,14 +38,15 @@ class LoginController extends Controller
                     'data' => []
                 ], 403);
             }
-
+            $token = $user->createToken('auth_token')->plainTextToken;
             return response()->json([
                 'status' => 'success',
                 'message' => 'Login berhasil',
                 'data' => [
                     'nama' => $user->nama,
                     'email' => $user->email,
-                    'role' => $user->role
+                    'role' => $user->role,
+                    'token' => $token,
                 ]
             ]);
 
