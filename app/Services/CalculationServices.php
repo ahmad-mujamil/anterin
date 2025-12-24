@@ -49,12 +49,18 @@ class CalculationServices
         ];
     }
 
-    public static function calculateTarif(float $distance_km) : int
+    public static function calculateTarif(float $distance_km) : array
     {
         $tarif = Tarif::query()->where("is_active",true)->latest()->first();
 
         $chargedKm = max((int) $tarif->min_km, (int) ceil($distance_km));
 
-        return (int) $tarif->harga_dasar + ($chargedKm * (int) $tarif->harga_per_km);
+        $totalTarif = (int) $tarif->harga_dasar + ($chargedKm * (int) $tarif->harga_per_km);
+        return [
+            'charged_km' => $chargedKm,
+            'tarif_dasar' => $tarif->harga_dasar,
+            'tarif_per_km' => $tarif->harga_per_km,
+            'total_tarif' => $totalTarif,
+        ];
     }
 }

@@ -24,10 +24,22 @@ class Order extends Model
         'tarif_per_km',
         'total_tarif',
         'status',
+        'accepted_at',
+        'picked_up_at',
+        'completed_at',
+        'cancelled_at',
 
     ];
 
-
+    protected function casts(): array
+    {
+        return [
+            'accepted_at' => 'datetime',
+            'picked_up_at' => 'datetime',
+            'completed_at' => 'datetime',
+            'cancelled_at' => 'datetime',
+        ];
+    }
 
     public function user() : BelongsTo
     {

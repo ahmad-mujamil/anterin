@@ -109,8 +109,10 @@ class TarifController extends Controller
                 'status' => 'success',
                 'message' => 'Hitung tarif berhasil',
                 'data' => [
-                    'jarak' => $hitungJarak["distance_km"],
-                    'tarif' => $hitungTarif
+                    'jarak' => $hitungTarif["charged_km"],
+                    "tarif_dasar" => $hitungTarif["tarif_dasar"],
+                    "tarif_per_km" => $hitungTarif["tarif_per_km"],
+                    'total_tarif' => $hitungTarif["total_tarif"],
                 ]
             ]);
 

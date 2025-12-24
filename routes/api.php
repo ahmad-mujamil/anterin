@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\TarifController;
 use Illuminate\Http\Request;
@@ -17,4 +18,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::apiResource('tarif', TarifController::class);
     Route::post('/hitung-tarif', [TarifController::class, 'calculate']);
+
+    Route::apiResource('order', OrderController::class)->except('update');
+    Route::post('/order/{order}/accepted', [OrderController::class, 'accept']);
+    Route::post('/order/{order}/picked-up', [OrderController::class, 'pickup']);
+    Route::post('/order/{order}/completed', [OrderController::class, 'completed']);
 });

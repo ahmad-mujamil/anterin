@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('driver_id')->nullable()->constrained('driver')->cascadeOnDelete();
-            $table->string('no_order');
+            $table->integer('no_order');
             $table->string('pickup_address')->nullable();
             $table->decimal('pickup_lat', 10, 7);
             $table->decimal('pickup_lng', 10, 7);
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->integer('tarif_dasar');
             $table->integer('tarif_per_km');
             $table->integer('total_tarif');
-            $table->enum('status', ['pending', 'accepted', 'on_delivery', 'done', 'cancel'])
+            $table->enum('status', ['pending', 'accepted', 'on_delivery', 'complete', 'cancel'])
                 ->default('pending');
             $table->timestamp('accepted_at')->nullable();
             $table->timestamp('picked_up_at')->nullable();
