@@ -122,9 +122,20 @@ class OrderController extends Controller
         }
     }
 
-    public function pickup(Order $order) : JsonResponse
+    public function pickup(Request $request,Order $order) : JsonResponse
     {
         try {
+            $request->validate([
+                'driver_id' => ['required','exists:driver,id,is_available,0']
+            ]);
+
+            if($order->driver_id != $request->driver_id) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Driver tidak valid',
+                    'data' => []
+                ]);
+            }
 
             if($order->status !== 'accepted') {
                 return response()->json([
@@ -158,9 +169,21 @@ class OrderController extends Controller
         }
     }
 
-    public function completed(Order $order) : JsonResponse
+    public function completed(Request $request,Order $order) : JsonResponse
     {
         try {
+            $request->validate([
+                'driver_id' => ['required','exists:driver,id,is_available,0']
+            ]);
+
+            if($order->driver_id != $request->driver_id) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Driver tidak valid',
+                    'data' => []
+                ]);
+            }
+
             if($order->status !== 'on_delivery') {
                 return response()->json([
                     'status' => 'error',
@@ -193,17 +216,23 @@ class OrderController extends Controller
     }
 
 
-    public function destroy(Order $order) : JsonResponse
+    public function destroy(Request $request,Order $order) : JsonResponse
     {
-        if(!$order->status !== 'pending' ) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Order tidak dapat dibatalkan',
-                'data' => []
-            ]);
-        }
+
 
         try {
+            $request->validate([
+                "user_id" => "required|exists:users,id|exists:order,user_id,id,".($order->id??'')
+            ]);
+
+            if(!$order->status !== 'pending' ) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Order tidak dapat dibatalkan',
+                    'data' => []
+            ]);
+            }
+
             DB::beginTransaction();
 
                 $order->update(
