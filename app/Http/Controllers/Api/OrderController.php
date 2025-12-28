@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
+use App\Models\Driver;
 use App\Models\Order;
 use App\Models\Tarif;
 use App\Services\CalculationServices;
@@ -103,6 +104,8 @@ class OrderController extends Controller
                 'driver_id' => $request->driver_id,
                 'accepted_at' => now()->toDateTimeString(),
             ]);
+
+            Driver::query()->where('id',$request->driver_id)->update(['is_available' => 0]);
             DB::commit();
             return response()->json([
                 'status' => 'success',
@@ -197,6 +200,8 @@ class OrderController extends Controller
                 'status' => 'completed',
                 'completed_at' => now()->toDateTimeString(),
             ]);
+
+            Driver::query()->where('id',$request->driver_id)->update(['is_available' => 1]);
             DB::commit();
             return response()->json([
                 'status' => 'success',
