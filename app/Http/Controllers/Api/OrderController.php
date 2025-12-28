@@ -197,7 +197,7 @@ class OrderController extends Controller
 
             DB::beginTransaction();
             $order->update([
-                'status' => 'completed',
+                'status' => 'complete',
                 'completed_at' => now()->toDateTimeString(),
             ]);
 
@@ -205,7 +205,7 @@ class OrderController extends Controller
             DB::commit();
             return response()->json([
                 'status' => 'success',
-                'message' => 'Order berhasil diterima',
+                'message' => 'Order berhasil diselesaikan',
                 'data' => [
                     "no_order" => $order->no_order,
                     "completed_at" => now()->toDateTimeString(),
