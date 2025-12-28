@@ -157,7 +157,7 @@ class OrderController extends Controller
             DB::commit();
             return response()->json([
                 'status' => 'success',
-                'message' => 'Order berhasil diterima',
+                'message' => 'Customer berhasil dipickup',
                 'data' => [
                     "no_order" => $order->no_order,
                     "picked_up_at" => now()->toDateTimeString(),
