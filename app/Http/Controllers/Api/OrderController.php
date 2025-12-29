@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
 use App\Models\Driver;
 use App\Models\Order;
-use App\Models\Tarif;
 use App\Services\CalculationServices;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -132,7 +131,7 @@ class OrderController extends Controller
                 'driver_id' => ['required','exists:driver,id,is_available,0']
             ]);
 
-            if($order->driver_id != $request->driver_id) {
+            if($order->driver_id !== $request->driver_id) {
                 return response()->json([
                     'status' => 'error',
                     'message' => 'Driver tidak valid',
