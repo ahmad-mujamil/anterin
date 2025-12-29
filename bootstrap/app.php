@@ -55,6 +55,34 @@ return Application::configure(basePath: dirname(__DIR__))
                 ], 404);
             }
 
+            if ($e instanceof \Illuminate\Database\RecordNotFoundException) {
+                return response()->json([
+                    'status'  => 'error',
+                    'message' => 'Data tidak ditemukan',
+                ], 404);
+            }
+
+            if ($e instanceof \Illuminate\Database\QueryException) {
+                return response()->json([
+                    'status'  => 'error',
+                    'message' => 'Data tidak ditemukan',
+                ], 404);
+            }
+
+            if ($e instanceof \Illuminate\Database\RecordsNotFoundException) {
+                return response()->json([
+                    'status'  => 'error',
+                    'message' => 'Data tidak ditemukan',
+                ], 404);
+            }
+
+            if ($e instanceof \Symfony\Component\Translation\Exception\NotFoundResourceException) {
+                return response()->json([
+                    'status'  => 'error',
+                    'message' => 'Data tidak ditemukan',
+                ], 404);
+            }
+
             // 5) Route tidak ditemukan (404)
             if ($e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
                 return response()->json([

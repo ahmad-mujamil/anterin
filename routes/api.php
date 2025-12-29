@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\PenggunaController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\TarifController;
 use Illuminate\Http\Request;
@@ -15,6 +16,8 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me',[LoginController::class, 'me']);
     Route::post('/logout',[LoginController::class, 'logout']);
+
+    Route::apiResource('pengguna', PenggunaController::class);
 
     Route::apiResource('tarif', TarifController::class);
     Route::post('/hitung-tarif', [TarifController::class, 'calculate']);
