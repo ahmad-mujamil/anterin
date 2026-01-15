@@ -8,8 +8,6 @@
 </p>
 
 ## About Anterin
-
-## Latar Belakang Masalah
 Meningkatnya kebutuhan masyarakat terhadap layanan pengantaran menuntut adanya sistem penentuan tarif yang adil, transparan, dan akurat. Namun, perhitungan tarif yang masih dilakukan secara manual atau tidak berbasis jarak sering menimbulkan ketidaksesuaian biaya dengan jarak tempuh sebenarnya. Hal ini dapat menyebabkan ketidakpuasan pengguna dan menyulitkan pengelolaan layanan.
 Oleh karena itu, aplikasi Anterin dikembangkan dengan menerapkan sistem perhitungan tarif berdasarkan jarak menggunakan API, sehingga tarif pengantaran dapat dihitung secara otomatis, konsisten, dan transparan sesuai dengan jarak antara lokasi jemput dan tujuan.
 
@@ -35,7 +33,7 @@ Layanan web (API) Anterin dibangun untuk menyediakan perhitungan tarif pengantar
     •  Dokumentasi API: Swagger / OpenAPI
     •  Server: Nginx & PHP-FPM
 
-    ANGGOTA
+## ANGGOTA
 
     Ketua
     2301011002
