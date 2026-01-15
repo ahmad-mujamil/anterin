@@ -7,53 +7,51 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About Anterin
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Latar Belakang Masalah
+Meningkatnya kebutuhan masyarakat terhadap layanan pengantaran menuntut adanya sistem penentuan tarif yang adil, transparan, dan akurat. Namun, perhitungan tarif yang masih dilakukan secara manual atau tidak berbasis jarak sering menimbulkan ketidaksesuaian biaya dengan jarak tempuh sebenarnya. Hal ini dapat menyebabkan ketidakpuasan pengguna dan menyulitkan pengelolaan layanan.
+Oleh karena itu, aplikasi Anterin dikembangkan dengan menerapkan sistem perhitungan tarif berdasarkan jarak menggunakan API, sehingga tarif pengantaran dapat dihitung secara otomatis, konsisten, dan transparan sesuai dengan jarak antara lokasi jemput dan tujuan.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tujuan Proyek
+Layanan web (API) Anterin dibangun untuk menyediakan perhitungan tarif pengantaran otomatis berbasis jarak secara akurat, konsisten, dan transparan. API ini membantu aplikasi mobile/web dalam:
+    •   Menghitung estimasi jarak & biaya dari titik jemput ke tujuan.
+    •   Mengelola data pengguna dan order secara terpusat.
+    •   Memudahkan integrasi dengan sistem lain (dashboard admin, mitra driver).
+    •   Menyediakan dokumentasi yang jelas agar pengembangan dan testing lebih cepat.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur Utama
+    1. Autentikasi Pengguna (Laravel Sanctum)
+    2. Data Tarif 
+    3. Manajemen Order / Transaksi (Menghitung Tarif Berdasarkan Jarak)
+    4. Manajemen Pengguna
+    5. Dokumentasi API
 
-## Learning Laravel
+## Teknologi yang Digunakan
+    •  Backend: PHP Laravel (RESTful API)
+    •  Database: MySQL
+    •  Autentikasi: Laravel Sanctum (token-based authentication)
+    •  Pengujian API: Postman
+    •  Dokumentasi API: Swagger / OpenAPI
+    •  Server: Nginx & PHP-FPM
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+    ANGGOTA
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    Ketua
+    2301011002
+    Ahmad Mujamil
+    Design Database, Coding
 
-## Laravel Sponsors
+    Anggota
+    2301010237
+    Shendy Emilia Putri
+    Testing Api
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    Anggota
+    2301011011
+    Khaerul Alfian
+    Pembuatan Dokumentasi API
 
-### Premium Partners
+## Link Dokumentasi API
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[Dokumentasi API](https://documenter.getpostman.com/view/49192408/2sBXVfksAF).
