@@ -30,7 +30,7 @@ class OrderController extends Controller
     {
         try {
             DB::beginTransaction();
-            $calculationServices = new CalculationServices();
+            $calculationServices = new CalculationServices(); 
             $hitungJarak = $calculationServices::calculateDistance(
                 $request->pickup_lat,
                 $request->pickup_lng,

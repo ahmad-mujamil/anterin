@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
+
 class PenggunaController extends Controller
 {
     public function index() : JsonResponse
